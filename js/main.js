@@ -1,6 +1,24 @@
 
-document.querySelector('button').addEventListener('click', getFetch)
- 
+document.getElementById('specific').addEventListener('click', getFetch)
+document.getElementById('rand').addEventListener('click', getRand)
+
+
+
+
+function getRand(){
+  let id = document.getElementById('code')
+  
+let arr = []
+  while (arr.length < 5) {
+    var r = Math.floor(Math.random() * 9) + 1;
+    if (arr.indexOf(r) === -1) arr.push(r);
+    
+  }
+  
+  console.log(arr);
+id.value = arr
+}
+
 
 // let title = document.getElementById('searchTitle')
 function getFetch() {  
