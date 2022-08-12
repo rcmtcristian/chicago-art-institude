@@ -8,18 +8,26 @@ document.getElementById('rand').addEventListener('click', getRand)
 function getRand(){
   let id = document.getElementById('code')
   
-let arr = []
-  while (arr.length < 5) {
-    var r = Math.floor(Math.random() * 9) + 1;
-    if (arr.indexOf(r) === -1) arr.push(r);
+let code = []
+  while (code.length < 5) {
+    let i = Math.floor(Math.random() * 9) + 1;
+    if (code.indexOf(i) === -1) code.push(i);
     
   }
-  
-  console.log(arr);
-id.value = arr
+  let main = code.join('')
+  console.log(main);
+id.value = main
+
+  // const getRand = () => {
+  //   const code = new Set();
+  //   while (code.size < 5) {
+  //     code.add((Math.random() * 9) + 1);
+  //   }
+  //   return Array.from(code);
+  // };
+
+
 }
-
-
 // let title = document.getElementById('searchTitle')
 function getFetch() {  
   // // const card = document.querySelector('card').value
