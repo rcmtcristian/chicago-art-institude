@@ -28,12 +28,21 @@ id.value = main
 
 
 }
+
+
+function clearing () {
+  li.textContent = ''
+}
+
+
+
+
 // let title = document.getElementById('searchTitle')
 function getFetch() {  
   // // const card = document.querySelector('card').value
 
   let id = document.getElementById('code').value
-  const url = `https://api.artic.edu/api/v1/artworks?fields=${id},title,artist_display,date_display,main_reference_number`
+  const url = `https://api.artic.edu/api/v1/artworks?fields=${id},title,artist_display,date_display,main_reference_number,category_titles,classification_titles`
  
 
  console.log(id)
@@ -50,15 +59,51 @@ function getFetch() {
 
        let cont = document.getElementById('cont')
       cont.textContent = data.data[0].artist_display
-    
+
+
+
+
       
+
+    ///////////////////list//////////////////////////////////
+      // data.data.forEach(a => {
+      //   console.log(a.classification_titles)
+      //   const li = document.createElement('li')
+
+      //   li.textContent = a.classification_titles
+
+
+      //   document.querySelector("ul").appendChild(li)
+
+      // })
+function getting() {
+  const li = document.createElement('li')
+
+  li.textContent = data.data[0].classification_titles
+
+  document.querySelector("ul").appendChild(li)
+
+
+}
+
+getting()
+
+
+      // https://api.artic.edu/api/v1/videos/${id} this for videos
+
+      
+
+
+//////////////////////////////////////////////////////////////
+
+
       console.log(data)
     })
     .catch(err => {
       console.log(`error ${err}`)
     });
   
-  const urlTwo = `https://api.artic.edu/api/v1/artworks/?fields=${id},title,image_id`
+  const urlTwo = `https://api.artic.edu/api/v1/artworks/?fields=${id},title,image_id,provenance_text,alt_text`
 
   fetch(urlTwo)
     .then(res => res.json()) // parse response as JSON
@@ -73,9 +118,12 @@ function getFetch() {
       // titleIn.textContent = data.data[0].title
       // // cont.textContent = data.data[0].artist_display
       // // date.innerText = data.data[0].date_display
-
-      console.log(dataTwo.data)
-      console.log(dataTwo.data[0].image_id)
+   
+      console.log(dataTwo)
+      let description = document.getElementById('description')
+      description.textContent = dataTwo.data[0].provenance_text
+      // console.log(dataTwo.data)
+      // console.log(dataTwo.data[0].image_id)
       let identifier = dataTwo.data[0].image_id
 
  let titleIn = document.getElementById('titleIn')
