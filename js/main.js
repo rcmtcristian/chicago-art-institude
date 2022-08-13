@@ -18,23 +18,8 @@ let code = []
   console.log(main);
 id.value = main
 
-  // const getRand = () => {
-  //   const code = new Set();
-  //   while (code.size < 5) {
-  //     code.add((Math.random() * 9) + 1);
-  //   }
-  //   return Array.from(code);
-  // };
-
 
 }
-
-
-function clearing () {
-  li.textContent = ''
-}
-
-
 
 
 // let title = document.getElementById('searchTitle')
@@ -47,31 +32,19 @@ function getFetch() {
 
  console.log(id)
    fetch(url)
-    .then(res => res.json()) // parse response as JSON
+    .then(res => res.json()) 
     .then(data => {
     
-      // // let image = data.data[0].api_link
+ 
      
-      // id.textContent = data.data[0].id
        let date = document.querySelector('#date')
         date.innerText = data.data[0].date_display
-      // titleIn.textContent = data.data[0].title
 
        let cont = document.getElementById('cont')
       cont.textContent = data.data[0].artist_display
 let classification =  document.querySelector('li')
       classification.textContent = data.data[0].classification_titles
 
-
-
-
-
-      // https://api.artic.edu/api/v1/videos/${id} this for videos
-
-      
-
-
-//////////////////////////////////////////////////////////////
 
 
       console.log(data)
@@ -86,16 +59,6 @@ let classification =  document.querySelector('li')
     .then(res => res.json()) // parse response as JSON
     .then(dataTwo => {
 
-      // // let cont = document.getElementById('cont')
-      // // let image = data.data[0].api_link
-      // let titleIn = document.getElementById('titleIn')
-      // id.textContent = data.data[0].id
-      // // let date = document.querySelector('#date')
-
-      // titleIn.textContent = data.data[0].title
-      // // cont.textContent = data.data[0].artist_display
-      // // date.innerText = data.data[0].date_display
-   
       console.log(dataTwo)
       let description = document.getElementById('description')
       description.textContent = dataTwo.data[0].provenance_text
@@ -111,6 +74,7 @@ let classification =  document.querySelector('li')
     })
     .catch(err => {
       console.log(`error ${err}`)
+      
     });
 
 
@@ -119,5 +83,29 @@ let classification =  document.querySelector('li')
 
 
 
+}
+
+// arrow section 
+let arrow = document.querySelector('.arrow')
+
+arrow.addEventListener('.click', sliding)
+
+
+window.onload = function () {
+  document.querySelector('.slide').className = "slide";
+  document.querySelector('.description').className = "description hiddenCont "
+
+}
+let a = 0;
+function sliding() {
+  if (a % 2 == 0) {
+    document.querySelector('.slide').className = "slide slide-active";
+    document.querySelector('.description').className = "description shown"
+    a++;
+  } else {
+    document.querySelector('.slide').className = "slide";
+    document.querySelector('.description').className = "description hiddenCont "
+    a++;
+  }
 }
 

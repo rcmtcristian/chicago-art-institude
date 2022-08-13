@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Document</title>
 </head>
 <body>
@@ -15,32 +18,70 @@
 
    <section>
 
-    <button class="aButton" id="specific">I get stuff</button>
+    <button class="aButton" id="specific">Search</button>
   <button  class="aButton"  id="rand"> Random</button>
    </section>
  </nav>
- 
-  
-  
+
   </section>
-<section id="container">
-    <img class="dis" id="card" src="./images/pexels-robin-schreiner-2261165.jpg" alt="">
-<div id="cont"></div><br>
-<span id="code"></span>
-<h1 id="titleIn"></h1>
-<div id="date"></div>
+
+  
+
+<section class="container">
+    <img class="dis" id="card" src="./images/pexels-robin-schreiner-2261165.jpg"  alt="" onerror="this.src='./images/15.png';">
+      <h1 id="titleIn"></h1>
+         
+   <div class="arrow-cont" >
+<a href="#" class="arrow"onclick="sliding()"> <i class="fa-solid fa-arrow-rotate-left"></i></a>
+  </div>
+<section class="slide slide-active">   
+   
+<section class="info" >
+
+  <section class=" description hiddenCont shown">
+      <div id="cont">
+      </div><br>
+        <span id="code"></span>
+ <h3 id="date">Thank you for using the gallery</h3>
 <section class="container">
   <section id="description"></section>
 </section>
 
+<section id="clasifications">
+   <ul><li></li></ul>
+  </section>
+  
+</section>
 
-<section id="clasifications"></section>
-<ul>
-  <li></li>
-</ul>
+    </section>
+</section>
 
+</section>
 
-
+<footer class="section bg-footer">
+  <div class="container">
+    <div>
+      <h6 class="footer-heading text-uppercase text-white">Informations</h6>
+      <ul class="footer-link mt-4">
+        <li><a href="https://www.artic.edu/" target="_blank"> Art Institute Chicago</a></li>
+        <li><a href="rcmtcristian.com" target="_blank">Portfolio</a></li>
+        
+      </ul>
+    </div>
+    <div class="footer-link">
+      <h6 class="footer-heading text-uppercase text-white" style="margin-left:5px ;">Contact us</h6>
+      <div>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="https://twitter.com/rcmtcristian" target="_blank"><i class="fab twitter footer-social-icon fa-twitter"></i></a></li>
+          <li class="list-inline-item"><a href="https://github.com/rcmtcristian" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-5">
+    <p class="footer-alt">2022 © Society, All Rights Reserved</p>
+  </div>
+</footer>
 
 </body>
 <script src="./js/main.js"></script>
