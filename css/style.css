@@ -20,6 +20,61 @@
 ul {
   list-style: none;
 }
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/css/fontface/ClashDisplay-Regular.woff2') format('woff2'),
+    url('/css/fontface/ClashDisplay-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/css/fontface/ClashDisplay-Bold.woff2') format('woff2'),
+    url('/css/fontface/ClashDisplay-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/css/fontface/ClashDisplay-Extralight.woff2') format('woff2'),
+    url('/css/fontface/ClashDisplay-Extralight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/css/fontface/ClashDisplay-Medium.woff2') format('woff2'),
+    url('/css/fontface/ClashDisplay-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/css/fontface/ClashDisplay-Light.woff2') format('woff2'),
+    url('/css/fontface/ClashDisplay-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/css/fontface/ClashDisplay-Semibold.woff2') format('woff2'),
+    url('/css/fontface/ClashDisplay-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 /******************************************
 /* BASE STYLES
 /*******************************************/
@@ -27,18 +82,40 @@ ul {
 body {
 background-color: #eee;
 margin: auto;
+text-align: center;
+font-family: 'Clash Display';
 }
 
 img {
   width: 60%;
+  
 }
 
+.dis {
+animation: fadeIn 2s;
+  opacity: 1;
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 .container {
   width: 90%;
   margin: auto;
+  align-content: center;
+  
 }
 
+input {
+  font-size: 1.7rem;
+  font-family: 'Clash Display';
+}
 
 nav {
   display: flex;
