@@ -59,34 +59,11 @@ function getFetch() {
 
        let cont = document.getElementById('cont')
       cont.textContent = data.data[0].artist_display
+let classification =  document.querySelector('li')
+      classification.textContent = data.data[0].classification_titles
 
 
 
-
-      
-
-    ///////////////////list//////////////////////////////////
-      // data.data.forEach(a => {
-      //   console.log(a.classification_titles)
-      //   const li = document.createElement('li')
-
-      //   li.textContent = a.classification_titles
-
-
-      //   document.querySelector("ul").appendChild(li)
-
-      // })
-function getting() {
-  const li = document.createElement('li')
-
-  li.textContent = data.data[0].classification_titles
-
-  document.querySelector("ul").appendChild(li)
-
-
-}
-
-getting()
 
 
       // https://api.artic.edu/api/v1/videos/${id} this for videos
